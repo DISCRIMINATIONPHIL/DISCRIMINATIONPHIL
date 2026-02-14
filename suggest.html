@@ -1,0 +1,399 @@
+d<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Feedback | DiscriminationPHIL</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/result-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="assets/media/icon.png" alt="DiscriminationPHIL Logo" class="site-logo">
+                </a>
+                <div class="logo-text">
+                    <h1>Discrimination<span class="highlight">PHIL</span></h1>
+                    <p class="tagline">Know Your Rights. Fight Discrimination.</p>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="quiz.html" class="nav-link"><i class="fas fa-question-circle"></i> Quiz</a>
+                <a href="learn.html" class="nav-link"><i class="fas fa-book"></i> Learn</a>
+                <a href="resources.html" class="nav-link"><i class="fas fa-hands-helping"></i> Resources</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        <!-- Feedback Header -->
+        <section class="result-header-section fade-in">
+            <div class="section-card">
+                <div class="result-header">
+                    <div class="result-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <div class="result-header-content">
+                        <h2>Share Your Feedback</h2>
+                        <p class="result-subtitle">Help us improve DiscriminationPHIL for everyone</p>
+                        <div class="result-tags">
+                            <span class="result-tag"><i class="fas fa-heart"></i> We Value Your Input</span>
+                            <span class="result-tag"><i class="fas fa-lightbulb"></i> Suggestions Welcome</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-summary">
+                    <p>Your feedback helps us make this resource better for the community. Whether you found an error, have a suggestion, or just want to share your experience, we'd love to hear from you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Form Section -->
+        <section class="feedback-form-section fade-in" style="animation-delay: 0.2s;">
+            <div class="section-card">
+                <div class="section-header">
+                    <h2><i class="fas fa-pencil-alt section-icon"></i> Send Us a Message</h2>
+                    <p class="section-subtitle">All fields are optional — share what matters to you</p>
+                </div>
+                
+                <!-- Rating Stars -->
+                <div class="rating-container">
+                    <p class="rating-label">How would you rate your experience?</p>
+                    <div class="rating-stars" id="ratingStars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="ratingValue" name="rating" value="">
+                </div>
+                
+                <!-- Feedback Form -->
+                <form id="suggestionForm" action="https://formspree.io/f/mrbaabob" method="POST" class="feedback-form">
+                    
+                    <!-- Optional Name Field -->
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i> Your Name (Optional)
+                        </label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" class="form-input">
+                    </div>
+                    
+                    <!-- Optional Email Field -->
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Your Email (Optional - if you'd like a response)
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" class="form-input">
+                    </div>
+                    
+                    <!-- Feedback Category -->
+                    <div class="form-group">
+                        <label for="category">
+                            <i class="fas fa-tag"></i> Feedback Type (Optional)
+                        </label>
+                        <select id="category" name="category" class="form-select">
+                            <option value="">-- Select a category --</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="bug">Found an Error</option>
+                            <option value="content">Content Issue</option>
+                            <option value="praise">Appreciation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Message Field (from original) -->
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment"></i> Your Message <span class="optional">(Required)</span>
+                        </label>
+                        <textarea 
+                            name="message" 
+                            id="message" 
+                            rows="6" 
+                            class="form-textarea" 
+                            placeholder="Please share your feedback, suggestions, or concerns..."
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Hidden fields to capture additional data -->
+                    <input type="hidden" name="page" value="suggest.html">
+                    <input type="hidden" name="timestamp" id="timestampField">
+                    
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Submit Feedback
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Thank You Message (hidden initially) -->
+                <div id="thankYouMessage" class="thank-you-message" style="display: none;">
+                    <div class="thank-you-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Thank You for Your Feedback!</h3>
+                    <p>Your message has been sent successfully. We appreciate you taking the time to help us improve.</p>
+                    <button onclick="resetForm()" class="action-btn secondary">
+                        <i class="fas fa-pen"></i> Send Another Message
+                    </button>
+                </div>
+                
+                <!-- Quick Feedback Options -->
+                <div class="quick-feedback">
+                    <p><i class="fas fa-bolt"></i> Quick feedback options:</p>
+                    <div class="quick-options">
+                        <button class="quick-option" data-message="The website is easy to use and helpful!">
+                            <i class="fas fa-smile"></i> Positive Experience
+                        </button>
+                        <button class="quick-option" data-message="I found a broken link or error on the site.">
+                            <i class="fas fa-bug"></i> Report an Error
+                        </button>
+                        <button class="quick-option" data-message="I have a suggestion for new content or features.">
+                            <i class="fas fa-lightbulb"></i> Suggest Something
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Feedback Matters -->
+        <section class="why-feedback-section fade-in" style="animation-delay: 0.4s;">
+            <div class="section-card">
+                <div class="section-header">
+                    <h2><i class="fas fa-heart section-icon"></i> Why Your Feedback Matters</h2>
+                    <p class="section-subtitle">Every suggestion helps us serve the community better</p>
+                </div>
+                
+                <div class="feedback-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle benefit-icon"></i>
+                        <div>
+                            <h3>Fix Errors & Improve Accuracy</h3>
+                            <p>Help us ensure all legal information is correct and up-to-date</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle benefit-icon"></i>
+                        <div>
+                            <h3>Add New Resources</h3>
+                            <p>Suggest additional laws, offices, or support groups we should include</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle benefit-icon"></i>
+                        <div>
+                            <h3>Improve User Experience</h3>
+                            <p>Tell us how to make the website easier to use and navigate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle benefit-icon"></i>
+                        <div>
+                            <h3>Help Others in Your Situation</h3>
+                            <p>Your experience helps us better serve people facing similar challenges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="disclaimer-section fade-in" style="animation-delay: 0.6s;">
+            <div class="section-card">
+                <div class="disclaimer-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                    <p>This website provides information only and SHOULD NOT be legal advice. We are not lawyers. For specific legal concerns, please consult a qualified lawyer or contact the appropriate government office.</p>
+                    <p class="disclaimer-note"><i class="fas fa-clock"></i> We typically respond to feedback within 3-5 business days.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="action-buttons-section fade-in" style="animation-delay: 0.8s;">
+            <div class="section-card">
+                <div class="action-buttons">
+                    <a href="index.html" class="action-btn secondary">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                    <a href="quiz.html" class="action-btn secondary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                    <a href="resources.html" class="action-btn primary">
+                        <i class="fas fa-hands-helping"></i> Get Help
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/media/icon.png" alt="DiscriminationPHIL Logo" class="footer-logo">
+                <div>
+                    <h3>Discrimination<span class="highlight">PHIL</span></h3>
+                    <p>Empowering Filipinos through legal literacy</p>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                <p>This website provides information only and SHOULD NOT be legal advice. We are not lawyers. For specific legal concerns, please consult a qualified lawyer or contact the appropriate government office.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="quiz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+                <a href="learn.html"><i class="fas fa-book"></i> Learn</a>
+                <a href="resources.html"><i class="fas fa-hands-helping"></i> Resources</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 DiscriminationPHIL.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="mobile-close-btn" id="mobileCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav">
+            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="quiz.html" class="mobile-nav-link"><i class="fas fa-question-circle"></i> Quiz</a>
+            <a href="learn.html" class="mobile-nav-link"><i class="fas fa-book"></i> Learn</a>
+            <a href="resources.html" class="mobile-nav-link"><i class="fas fa-hands-helping"></i> Resources</a>
+        </div>
+    </div>
+
+    <!-- JavaScript (keeping your exact Formspree logic) -->
+    <script>
+        // Rating stars functionality
+        const stars = document.querySelectorAll('.rating-stars i');
+        const ratingInput = document.getElementById('ratingValue');
+        
+        stars.forEach(star => {
+            star.addEventListener('mouseenter', function() {
+                const rating = this.getAttribute('data-rating');
+                highlightStars(rating);
+            });
+            
+            star.addEventListener('mouseleave', function() {
+                const currentRating = ratingInput.value;
+                if (currentRating) {
+                    highlightStars(currentRating);
+                } else {
+                    resetStars();
+                }
+            });
+            
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-rating');
+                ratingInput.value = rating;
+                highlightStars(rating);
+            });
+        });
+        
+        function highlightStars(rating) {
+            resetStars();
+            for (let i = 0; i < rating; i++) {
+                stars[i].classList.remove('far');
+                stars[i].classList.add('fas');
+                stars[i].style.color = '#FFD700';
+            }
+        }
+        
+        function resetStars() {
+            stars.forEach(star => {
+                star.classList.remove('fas');
+                star.classList.add('far');
+                star.style.color = '';
+            });
+        }
+        
+        // Quick options - populate message field
+        document.querySelectorAll('.quick-option').forEach(button => {
+            button.addEventListener('click', function() {
+                const message = this.getAttribute('data-message');
+                document.getElementById('message').value = message;
+                document.getElementById('message').focus();
+            });
+        });
+        
+        // Set timestamp
+        document.getElementById('timestampField').value = new Date().toISOString();
+        
+        // YOUR EXACT FORMSPREE CODE - preserved exactly as you had it
+        document.getElementById("suggestionForm").addEventListener("submit", async function(event) {
+            event.preventDefault(); // stop normal redirect
+            
+            const form = event.target;
+            const data = new FormData(form);
+            
+            // Add rating to data if it exists
+            const rating = document.getElementById('ratingValue').value;
+            if (rating) {
+                data.append('rating', rating);
+            }
+            
+            // send the form data to Formspree
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            
+            if (response.ok) {
+                // Hide form, show thank you message
+                form.style.display = 'none';
+                document.querySelector('.rating-container').style.display = 'none';
+                document.querySelector('.quick-feedback').style.display = 'none';
+                document.getElementById('thankYouMessage').style.display = 'block';
+            } else {
+                alert("Oops! Something went wrong. Please try again.");
+            }
+        });
+        
+        // Reset form function
+        function resetForm() {
+            const form = document.getElementById('suggestionForm');
+            form.reset();
+            form.style.display = 'block';
+            document.querySelector('.rating-container').style.display = 'block';
+            document.querySelector('.quick-feedback').style.display = 'block';
+            document.getElementById('thankYouMessage').style.display = 'none';
+            resetStars();
+            ratingInput.value = '';
+        }
+    </script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

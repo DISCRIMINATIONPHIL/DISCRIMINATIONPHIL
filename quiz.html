@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discrimination Awareness Quiz | DiscriminationPHIL</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#quiz-main" class="skip-to-content">Skip to Quiz</a>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="assets/media/icon.png" alt="DiscriminationPHIL Logo" class="site-logo">
+                </a>
+                <div class="logo-text">
+                    <h1>Discrimination<span class="highlight">PHIL</span></h1>
+                    <p class="tagline">Know Your Rights. Fight Discrimination.</p>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="quiz.html" class="nav-link active"><i class="fas fa-question-circle"></i> Quiz</a>
+                <a href="learn.html" class="nav-link"><i class="fas fa-book"></i> Learn</a>
+                <a href="resources.html" class="nav-link"><i class="fas fa-hands-helping"></i> Resources</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-wrapper" id="quiz-main">
+        <!-- Quiz Introduction -->
+        <section class="quiz-intro-section fade-in">
+            <div class="section-card">
+                <div class="section-header">
+                    <h2><i class="fas fa-clipboard-check section-icon"></i> Discrimination Awareness Quiz</h2>
+                    <p class="section-subtitle">Review your situation</p>
+                </div>
+                
+                <div class="quiz-intro-content">
+                    <div class="quiz-description">
+                        <p>This quiz will help you understand if you're experiencing discrimination and guide you to appropriate resources based on your situation.</p>
+                        
+                        <div class="quiz-features">
+                            <div class="feature-item">
+                                <i class="fas fa-user-shield feature-icon"></i>
+                                <div>
+                                    <h4>Private</h4>
+                                    <p>Your answers are not stored or shared with anyone.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-map-signs feature-icon"></i>
+                                <div>
+                                    <h4>Guidance</h4>
+                                    <p>Get resources for your situation.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-bolt feature-icon"></i>
+                                <div>
+                                    <h4>Quick & Simple</h4>
+                                    <p>Just 4 simple questions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-purpose">
+                            <h3>Why Take This Quiz?</h3>
+                            <p>This tool helps you:</p>
+                            <ul>
+                                <li>Identify if you're experiencing discrimination</li>
+                                <li>Understand which laws protect you</li>
+                                <li>Learn where to get help if needed</li>
+                                <li>Know your legal rights and options</li>
+							<br>
+					         <h3>DISCLAIMER</h3>
+                            <p>This is not legal advice. Please consult a lawyer or government office after.</p>
+                            <ul>
+						
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-start-container">
+                        <div class="start-quiz-card">
+                            <h3>Ready to Begin?</h3>
+                            <p>Click below to start your personalized assessment</p>
+                            <button class="start-quiz-btn" id="startQuizBtn">
+                                <i class="fas fa-play-circle"></i> Start Assessment
+                            </button>
+                            <div class="quiz-reminders">
+                                <p><i class="fas fa-check-circle"></i> Personal results</p>
+                                <p><i class="fas fa-check-circle"></i> No personal information required</p>
+                                <p><i class="fas fa-check-circle"></i> Instant answers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Form (Hidden Initially) -->
+        <section class="quiz-form-section fade-in" id="quizFormSection" style="display: none;">
+            <div class="section-card">
+                <div class="section-header">
+                    <h2><i class="fas fa-question-circle section-icon"></i> Discrimination Assessment</h2>
+                    <div class="quiz-progress" id="quizProgress">
+                        <span class="progress-text">Question <span id="currentQuestion">1</span> of 4</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="discriminationQuizForm">
+                    <!-- Question 1 -->
+                    <div class="quiz-question active" data-question="1">
+                        <div class="question-header">
+                            <h3><span class="question-number">1</span> Which group do you identify with?</h3>
+                            <p class="question-help">Select the group that best represents your situation</p>
+                        </div>
+                        
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="group" value="women" required>
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Vulnerable Women</h4>
+                                        <p>Women facing discrimination based on gender</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="group" value="pwd">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-wheelchair"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Persons with Disabilities (PWDs)</h4>
+                                        <p>Individuals with physical or mental disabilities</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="group" value="elderly">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-user-clock"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Elderly / Senior Citizens</h4>
+                                        <p>Individuals aged 60 years or older</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="group" value="lgbt">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-rainbow"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>LGBTQ+ Community</h4>
+                                        <p>Lesbian, Gay, Bisexual, Transgender, Queer+ individuals</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="group" value="none">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>None apply / Just Learning</h4>
+                                        <p>I want to learn about discrimination awareness</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="question-navigation">
+                            <button type="button" class="nav-btn next-btn" data-next="2">
+                                Next Question <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-question" data-question="2" style="display: none;">
+                        <div class="question-header">
+                            <h3><span class="question-number">2</span> Where are you experiencing discrimination?</h3>
+                            <p class="question-help">Select the area where discrimination occurs most</p>
+                        </div>
+                        
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="area" value="work" required>
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Workplace</h4>
+                                        <p>At your job or place of employment</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="area" value="school">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Education</h4>
+                                        <p>At school, university, or training programs</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="area" value="public">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-store"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Public Spaces</h4>
+                                        <p>In public areas, transportation, or businesses</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="area" value="healthcare">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Healthcare</h4>
+                                        <p>When seeking medical treatment or services</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="area" value="family">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Home / Family</h4>
+                                        <p>Within your household or family environment</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="area" value="none">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-ban"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Not Experiencing</h4>
+                                        <p>I'm not currently facing discrimination</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="question-navigation">
+                            <button type="button" class="nav-btn prev-btn" data-prev="1">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="nav-btn next-btn" data-next="3">
+                                Next Question <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-question" data-question="3" style="display: none;">
+                        <div class="question-header">
+                            <h3><span class="question-number">3</span> How often does this happen?</h3>
+                            <p class="question-help">Select the frequency of these experiences</p>
+                        </div>
+                        
+                        <div class="options-grid single-column">
+                            <label class="option-card">
+                                <input type="radio" name="frequency" value="multiple" required>
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Multiple Times</h4>
+                                        <p>This has happened more than once, it's a pattern</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="frequency" value="once">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-history"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Once or Rarely</h4>
+                                        <p>This happened once or very infrequently</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="frequency" value="not">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Not Experiencing</h4>
+                                        <p>I'm not currently facing discrimination situations</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="question-navigation">
+                            <button type="button" class="nav-btn prev-btn" data-prev="2">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="nav-btn next-btn" data-next="4">
+                                Next Question <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="quiz-question" data-question="4" style="display: none;">
+                        <div class="question-header">
+                            <h3><span class="question-number">4</span> How familiar are you with your legal rights?</h3>
+                            <p class="question-help">Select your level of legal knowledge</p>
+                        </div>
+                        
+                        <div class="options-grid single-column">
+                            <label class="option-card">
+                                <input type="radio" name="awareness" value="knowledgeable" required>
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-gavel"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Knowledgeable</h4>
+                                        <p>I know my legal rights and protections well</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="awareness" value="somewhat">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Somewhat Familiar</h4>
+                                        <p>I have basic knowledge but could learn more</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="awareness" value="unfamiliar">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-question"></i>
+                                    </div>
+                                    <div class="option-text">
+                                        <h4>Unfamiliar</h4>
+                                        <p>I don't know much about my legal rights</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="question-navigation">
+                            <button type="button" class="nav-btn prev-btn" data-prev="3">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="submit" class="nav-btn submit-btn">
+                                <i class="fas fa-paper-plane"></i> See Results
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Quiz Tips -->
+                <div class="quiz-tips">
+                    <h4><i class="fas fa-lightbulb"></i> Important Notes:</h4>
+                    <ul>
+                        <li>This tool provides guidance only, not legal advice</li>
+                        <li>For legal concerns, consult a qualified attorney</li>
+                        <li>Your answers are confidential and not stored</li>
+                        <li>You can skip any question you're uncomfortable answering</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/media/icon.png" alt="DiscriminationPHIL Logo" class="footer-logo">
+                <div>
+                    <h3>Discrimination<span class="highlight">PHIL</span></h3>
+                    <p>Empowering Filipinos through legal literacy</p>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                <p>This website provides information only and SHOULD NOT be legal advice. We are not lawyers. For specific legal concerns, please consult a qualified lawyer or contact the appropriate government office.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="index.html"><i class="fas fa-home"></i> Back to Home</a>
+                <a href="resources.html"><i class="fas fa-hands-helping"></i> Get Help</a>
+                <a href="suggest.html"><i class="fas fa-comment-dots"></i> Send Feedback</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+                <p>&copy; 2025 DiscriminationPHIL.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="mobile-close-btn" id="mobileCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav">
+            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="quiz.html" class="mobile-nav-link active"><i class="fas fa-question-circle"></i> Quiz</a>
+            <a href="learn.html" class="mobile-nav-link"><i class="fas fa-book"></i> Learn</a>
+            <a href="resources.html" class="mobile-nav-link"><i class="fas fa-hands-helping"></i> Resources</a>
+            <a href="news.html" class="mobile-nav-link"><i class="fas fa-newspaper"></i> News</a>
+        </div>
+    </div>
+
+    <script src="assets/js/quiz.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+</html>

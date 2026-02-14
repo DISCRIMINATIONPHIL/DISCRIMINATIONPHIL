@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiscriminationPHIL | Learn Your Rights</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Selection Screen -->
+    <div class="language-screen" id="languageScreen">
+        <div class="language-card">
+            <div class="logo-container">
+                <img src="assets/media/icon.png" alt="DiscriminationPHIL Logo" class="intro-logo">
+                <h1>Discrimination<span class="highlight">PHIL</span></h1>
+            </div>
+            <p class="language-subtitle">A Legal Literacy Platform for Vulnerable Groups</p>
+            
+            <div class="language-options">
+                <h2>Choose your language:</h2>
+                <button class="language-btn english-btn" id="englishBtn">
+                    <i class="fas fa-globe-americas"></i>
+                    <span>English</span>
+                </button>
+                <button class="language-btn tagalog-btn" id="tagalogBtn" disabled>
+                    <i class="fas fa-globe-asia"></i>
+                    <span>Tagalog</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Website Content (hidden until language selected) -->
+    <div class="main-content" id="mainContent" style="display: none;">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-container">
+                <div class="logo-section">
+                    <img src="assets/media/icon.png" alt="DiscriminationPHIL Logo" class="site-logo">
+                    <div class="logo-text">
+                        <h1>Discrimination<span class="highlight">PHIL</span></h1>
+                        <p class="tagline">Know Your Rights. Fight Discrimination.</p>
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                    <a href="quiz.html" class="nav-link"><i class="fas fa-question-circle"></i> Quiz</a>
+                    <a href="learn.html" class="nav-link"><i class="fas fa-book"></i> Learn</a>
+                    <a href="resources.html" class="nav-link"><i class="fas fa-hands-helping"></i> Resources</a>
+                </nav>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content-wrapper">
+            <!-- Welcome Section -->
+            <section class="welcome-section fade-in">
+                <div class="welcome-card">
+                    <div class="welcome-header">
+                        <h2>Welcome to Discrimination<span class="highlight">PHIL</span></h2>
+                        <p class="welcome-subtitle">Your guide to understanding discrimination in Angeles City.</p>
+                    </div>
+                    
+                    <!-- Search Bar -->
+                    <div class="search-section">
+                        <div class="search-container">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" 
+                                   id="searchInput" 
+                                   class="search-input" 
+                                   placeholder="Search for information (e.g., women's rights, PWD laws, LGBT discrimination...)"
+                                   aria-label="Search for discrimination-related information">
+                            <button class="search-btn" id="searchBtn">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="search-suggestions">
+                            <span class="suggestion-label">Try:</span>
+                            <button class="suggestion-tag" data-search="women">Women's Rights</button>
+                            <button class="suggestion-tag" data-search="pwd">PWD Laws</button>
+                            <button class="suggestion-tag" data-search="elderly">Elderly Rights</button>
+                            <button class="suggestion-tag" data-search="lgbt">LGBT Protection</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Definition Section -->
+            <section class="definition-section fade-in" style="animation-delay: 0.2s;">
+                <div class="section-card">
+                    <div class="section-header">
+                        <h2><i class="fas fa-balance-scale section-icon"></i> What is Discrimination?</h2>
+                        <p class="section-subtitle">A simplified explanation</p>
+                    </div>
+                    
+                    <div class="definition-content">
+                        <div class="definition-main">
+                            <p class="lead-text">
+                                Discrimination means treating someone unfairly or differently because of who they are, 
+                                even when they did nothing wrong.
+                            </p>
+                            
+                            <div class="definition-details">
+                                <p>This unfair treatment can happen because of:</p>
+                                <div class="discrimination-types">
+                                    <span class="type-tag"><i class="fas fa-user"></i> Age</span>
+                                    <span class="type-tag"><i class="fas fa-venus-mars"></i> Gender</span>
+                                    <span class="type-tag"><i class="fas fa-heart"></i> Who they love</span>
+                                    <span class="type-tag"><i class="fas fa-wheelchair"></i> Ability</span>
+                                    <span class="type-tag"><i class="fas fa-pray"></i> Religion</span>
+                                    <span class="type-tag"><i class="fas fa-globe"></i> Nationality</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="definition-note">
+                            <i class="fas fa-info-circle note-icon"></i>
+                            <p>Discrimination can take many forms, as long as it involves unfair treatment based on personal characteristics.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Examples Section (with collapse) -->
+            <section class="examples-section fade-in" style="animation-delay: 0.4s;">
+                <div class="section-card">
+                    <div class="section-header with-toggle">
+                        <div>
+                            <h2><i class="fas fa-search section-icon"></i> How to Spot Discrimination</h2>
+                            <p class="section-subtitle">Common examples of unfair treatment</p>
+                        </div>
+                        <button class="collapse-btn" id="collapseBtn">
+                            <i class="fas fa-chevron-up"></i>
+                            <span>Hide Examples</span>
+                        </button>
+                    </div>
+                    
+                    <div class="examples-content" id="examplesContent">
+                        <div class="example-grid">
+                            <div class="example-card">
+                                <div class="example-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="example-text">
+                                    <h3>Workplace Discrimination</h3>
+                                    <p>Employers who turn down hiring someone without a clear reason.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="example-card">
+                                <div class="example-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="example-text">
+                                    <h3>Unequal Pay</h3>
+                                    <p>Getting paid less than others for doing the same work.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="example-card">
+                                <div class="example-icon">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div class="example-text">
+                                    <h3>Access Denial</h3>
+                                    <p>A public place that denies entry or service based on how you look or are.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="example-card">
+                                <div class="example-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="example-text">
+                                    <h3>Educational Bias</h3>
+                                    <p>A teacher gives a student a hard time without a clear reason.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="example-card">
+                                <div class="example-icon">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="example-text">
+                                    <h3>Healthcare Discrimination</h3>
+                                    <p>Doctors giving care based on what a patient looks like, not what they need.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="example-card">
+                                <div class="example-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="example-text">
+                                    <h3>Housing Discrimination</h3>
+                                    <p>To deny rent without a clear reason.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="examples-note">
+                            <i class="fas fa-lightbulb note-icon"></i>
+                            <p>Remember: Discrimination can be hard or easy to see. If it does not feel fair and is based on who you are (not what you do), this might not be a clear reason.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+			
+			  <!-- News Carousel Section -->
+            <section class="news-section fade-in" style="animation-delay: 0.6s;">
+                <div class="section-card">
+                    <div class="section-header">
+                        <h2><i class="fas fa-newspaper section-icon"></i> Discrimination News</h2>
+                        <p class="section-subtitle">Stay updated</p>
+                    </div>
+                    
+                    <div class="news-carousel-container">
+                        <!-- Left Arrow -->
+                        <button class="carousel-arrow carousel-arrow-left" id="newsPrevBtn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <!-- News Cards Container -->
+                        <div class="news-cards-container" id="newsCardsContainer">
+                            <!-- News Card 1 (Active by default) -->
+                            <div class="news-card active" data-news-id="1">
+                                <div class="news-card-header">
+                                    <span class="news-category">Women's Rights</span>
+                                    <span class="news-date">November 24, 2025</span>
+                                </div>
+                                <div class="news-card-image">
+                                        <i class="fas fa-image"></i>
+    <img src="assets/media/news1.jpg" alt="News description" class="news-image">
+                                    </div>
+                                <div class="news-card-content">
+                                    <h3>18 Day Drive by Angeles City Works to Keep Women Safe</h3>
+                                    <p class="news-excerpt">NOVEMBER: Angeles City campaign to stop VAW, or Violence Against Women. Done by the Angeles City Social Welfare and Development Office</p>
+                                    <div class="news-tags">
+                                        <span class="news-tag">Protection</span>
+                                        <span class="news-tag">Empowerment</span>
+                                        <span class="news-tag">Government</span>
+                                    </div>
+                                </div>
+    <a href="https://www.facebook.com/angelescityinfo/posts/pfbid02RuuboCQAJU2rDDBzbpzNx9y6WVMzGDNQyoSCbWFG2bZCoQaRPZ237nAykprCJRuRl" 
+       class="read-more-btn" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        Read Full Story <i class="fas fa-external-link-alt"></i>
+    </a>
+</div>
+                            
+                            <!-- News Card 2 -->
+                            <div class="news-card" data-news-id="2">
+                                <div class="news-card-header">
+                                    <span class="news-category">Rights for All</span>
+                                    <span class="news-date">November 19, 2025</span>
+                                </div>
+                                <div class="news-card-image">           
+                                        <i class="fas fa-image"></i>
+    <img src="assets/media/news2.jpg" alt="News description" class="news-image"
+                                    </div>
+                                    </div>									
+                                <div class="news-card-content">
+                                    <h3>Mayor Jon Lazatin II gives cash aid to families and helps children with school aid.</h3>
+                                    <p class="news-excerpt">NOVEMBER: Angeles City still works with the Angeles City Social Welfare and Development Office to give help to those in need.</p>
+                                    <div class="news-tags">
+                                        <span class="news-tag">Children's Education</span>
+                                        <span class="news-tag">Disadvantaged Persons</span>
+                                        <span class="news-tag">Government</span>
+                                    </div>
+                                </div>
+    <a href="https://www.facebook.com/districtofficeofcongressmancarmelojonlazatin/posts/pfbid02Q8vTp5ggrFmN1Z1sS6v9uP6cyA2vdzUtvf8b7tK18hJgXz5nDxQ9mFoMqwAXfFU7l" 
+       class="read-more-btn" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        Read Full Story <i class="fas fa-external-link-alt"></i>
+    </a>
+</div>
+                            
+                            <!-- News Card 3 -->
+                            <div class="news-card" data-news-id="3">
+                                <div class="news-card-header">
+                                    <span class="news-category">Children Protection</span>
+                                    <span class="news-date">January 27, 2025</span>
+                                </div>
+                                <div class="news-card-image">
+                                        <i class="fas fa-image"></i>
+    <img src="assets/media/news3.jpg" alt="News description" class="news-image"
+                                    </div>
+                                </div>
+                                <div class="news-card-content">
+                                    <h3>Angeles City reaches out to kids and those at-risk. The city warns to follow the laws.</h3>
+                                    <p class="news-excerpt">[JANUARY] Mayor Jon Lazatin II led a team to help people on the streets to rescue kids and adults in danger. They also gave out warnings and aid to keep the city safe.
+</p>
+                                    <div class="news-tags">
+                                        <span class="news-tag">Legal</span>
+                                        <span class="news-tag">Updates</span>
+                                        <span class="news-tag">Protection</span>
+                                    </div>
+                                </div>
+    <a href="https://www.facebook.com/angelescityinfo/posts/pfbid02JE7TBua8hKcHBiSZoHYQ4nAZUb8DrRTbWeT1HoVkXcRkVmmEJmX46hpUy3hzoea8l" 
+       class="read-more-btn" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        Read Full Story <i class="fas fa-external-link-alt"></i>
+    </a>
+</div>
+                        </div>
+                        
+                        <!-- Right Arrow -->
+                        <button class="carousel-arrow carousel-arrow-right" id="newsNextBtn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Carousel Dots Indicator -->
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                    </div>
+                    
+
+            <!-- Quick Actions Section -->
+            <section class="actions-section fade-in" style="animation-delay: 0.6s;">
+                <div class="section-card">
+                    <div class="section-header">
+                        <h2><i class="fas fa-rocket section-icon"></i> Take Action Now</h2>
+                        <p class="section-subtitle">Start your journey to understanding your rights</p>
+                    </div>
+                    
+                    <div class="action-grid">
+                        <a href="quiz.html" class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h3>Take the Quiz</h3>
+                            <p>Assess your situation and get personalized guidance</p>
+                            <span class="action-link">Start Quiz <i class="fas fa-arrow-right"></i></span>
+                        </a>
+                        
+                        <a href="learn.html" class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3>Learn Your Rights</h3>
+                            <p>Understand laws protecting vulnerable groups</p>
+                            <span class="action-link">Explore <i class="fas fa-arrow-right"></i></span>
+                        </a>
+                        
+                        <a href="resources.html" class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3>Find Help</h3>
+                            <p>Connect with government offices and support organizations</p>
+                            <span class="action-link">Get Help <i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <img src="assets/media/icon.png" alt="DiscriminationPHIL Logo" class="footer-logo">
+                    <div>
+                        <h3>Discrimination<span class="highlight">PHIL</span></h3>
+                        <p>Empowering Filipinos through legal literacy</p>
+                    </div>
+                </div>
+                
+                <div class="footer-disclaimer">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                    <p>This website provides information only and SHOULD NOT be legal advice. We are not lawyers. For specific legal concerns, please consult a qualified lawyer or contact the appropriate government office.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="suggest.html"><i class="fas fa-comment-dots"></i> Send Feedback</a>
+<a href="#" id="tagalogLink"><i class="fas fa-language"></i> Switch to Tagalog</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 DiscriminationPHIL.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="mobile-close-btn" id="mobileCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav">
+            <a href="index.html" class="mobile-nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="quiz.html" class="mobile-nav-link"><i class="fas fa-question-circle"></i> Quiz</a>
+            <a href="learn.html" class="mobile-nav-link"><i class="fas fa-book"></i> Learn</a>
+            <a href="resources.html" class="mobile-nav-link"><i class="fas fa-hands-helping"></i> Resources</a>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
